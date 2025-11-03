@@ -85,8 +85,7 @@ dotnet ef database update
 
 Connection string is in `appsettings.json` or can be overridden with environment variable:
 ```bash
-# Replace YOUR_PASSWORD with your actual secure password
-$env:DB_CONNECTION_STRING="Server=localhost;Port=54321;Database=space_db;User Id=pguser;Password=YOUR_PASSWORD"
+$env:DB_CONNECTION_STRING="Server=localhost;Port=54321;Database=space_db;User Id=pguser;Password=pguserpass"
 ```
 
 ## Architecture
@@ -379,13 +378,3 @@ redisDictionary.SaveCorrelation(key1, key2);
 var value = redisDictionary.Get(key);
 var correlated = redisDictionary.GetCorrelation(key);
 ```
-
----
-
-Issue to solve: https://github.com/xlab2016/space_db_public/issues/1
-Your prepared branch: issue-1-691bfacc41a2
-Your prepared working directory: /tmp/gh-issue-solver-1762174098911
-Your forked repository: konard/space_db_public
-Original repository (upstream): xlab2016/space_db_public
-
-Proceed.
