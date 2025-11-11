@@ -53,11 +53,19 @@ namespace SpaceDb.Tests.Services.Parsers
                     Metadata = CreateMetadata(metadata)
                 };
 
-                result.Fragments.Add(new ContentFragment
+                var fragment = new ContentFragment
                 {
                     Content = payload,
                     Type = "test_fragment",
                     Order = 0
+                };
+
+                result.Blocks.Add(new ContentBlock
+                {
+                    Content = payload,
+                    Type = "test_block",
+                    Order = 0,
+                    Fragments = new List<ContentFragment> { fragment }
                 });
 
                 return Task.FromResult(result);
